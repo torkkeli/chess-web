@@ -3,44 +3,31 @@ import ChessBoard from './components/ChessBoard.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Chess logo" class="logo" src="./assets/chess-logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <ChessBoard />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="board">
+    <ChessBoard />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.app-container {
+  min-height: 100vh;
+  display: 100vw;
+  flex-direction: relative;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.board {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+/* Add space for the logo only on small screens */
+@media (max-width: 600px) {
+  .board {
+    margin-top: 8rem;
+    margin-left: 8rem;
   }
 }
 </style>
